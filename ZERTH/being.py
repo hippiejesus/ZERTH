@@ -1,5 +1,8 @@
 #Being.py
 #Handles player and NPCs, as well as any beasties and monsters that may be lurking about.
+needsReferences = nr = dict() #references to objects that
+                              #fill a particular need
+ 
  
 default_stats_person={'Strength':10,'Agility':15,'Intellect':15,
                'Sense':12,'Wounds':10,'Vitality':10, 'Discipline':'d8',
@@ -26,7 +29,8 @@ class being:
         
         self.satiation = 100
         self.hydration = 100
-        self.interests = []
+        self.priorities = ['survival']
+        self.needs = ['food','water','air']
 
         
 class person(being):
@@ -37,8 +41,15 @@ class person(being):
         self.discipline = 8
         self.nickname = nickname
         self.icon = nickname[0]
+        self.needs.append('shelter')
+        self.needs.append('clothing')
         print('test person')
         
+    """def fillNeeds(self):
+    global nr
+        for category in self.needs:
+            catList = nr[category]"""
+            
 class player(person):
     def __init__(self,name='Human',nickname='Unknown',stats=default_stats_person):
         person.__init__(self,name,nickname,stats)
@@ -76,6 +87,7 @@ class plant(being):
         stats = self.name
         self.name = name
         self.stats = stats
+        self.needs.append('light')
         
         print('test plant')
  
