@@ -39,6 +39,8 @@ class region:
     def getThing(self,target):
         for being in self.being_list:
             if being.coord == target: return being
+        for item in self.object_list:
+            if item.coord == target: return item
         return None
         
     def getThings(self,target):
@@ -48,6 +50,7 @@ class region:
         for i in directions:
             target_index = origin + directions[i]
             target_indices.append(target_index)
+        #target_indices.append(origin)
         for i in target_indices:
             if self.getThing(i) != None:
                 around_target.append(self.getThing(i))
@@ -55,6 +58,8 @@ class region:
         
     def show(self):
         self.tMap = self.rMap.copySelf()
+        for o in self.object_list:
+            self.tMap.setI(o.coord,o.icon,37)
         for b in self.being_list:
             self.tMap.setI(b.coord,b.icon,7)
         self.tMap.display()
@@ -70,7 +75,9 @@ class region:
             if persons_present != {}: print('Persons: '+str(persons_present.keys()))
             if animals_present != {}: print('Animals: '+str(animals_present.keys()))
         if self.object_list != []:
-            print('Objects: '+str(self.object_list))
+            print('Objects: ')
+            for item in self.object_list:
+                print('    '+str(item.name))
         if self.resources != {}:
             print('Resources(and severity): '+str(self.resources))
         

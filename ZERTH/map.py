@@ -52,13 +52,13 @@ class regional_map:
                 line += target[1]+target[0]
             dmap += line+'\033[37;40m+\n'
         dmap += '\033[37;40m++++++++++++++++++++++++++'
-        print dmap
+        print(dmap)
             
     def checkI(self,index):
         return self.map_dict[index]
         
     def setI(self,index,icon,color):
-		self.map_dict[index] = [icon,col(color)]
+        self.map_dict[index] = [icon,col(color)]
         
     def copySelf(self):
         self2 = regional_map()
