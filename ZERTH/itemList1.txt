@@ -1,0 +1,208 @@
+vvv wep_001
+name             = knife
+kind             = weapon
+durability       = 25-100
+description      = Your standard, full tang knife.
+buffs            = None
+debuffs          = None
+damage           = 1d4+str
+damageType       = P/S
+damageReductions = None
+coverage         = 10%
+weight           = 1 lb
+speed            = factor 1
+slots            = leftHand,rightHand,sheathe
+icon             = -
+... wep_001
+
+vvv wep_002
+name             = shortsword
+kind             = weapon
+durability       = 40-160
+description      = A balanced, short blade with sturdy hilt.
+buffs            = None
+debuffs          = None
+damage           = 1d6+str
+damageType       = S
+damageReductions = None
+coverage         = 20%
+weight           = 3 lb
+speed            = factor 2
+slots            = leftHand,rightHand,sheathe
+icon             = /
+... wep_002
+
+vvv wep_003
+name             = rapier
+kind             = weapon
+durability       = 40-120
+description      = A lithe fencing rapier.
+buffs            = None
+debuffs          = None
+damage           = 1d6+str
+damageType       = P
+damageReductions = None
+coverage         = 15%
+weight           = 2 lb
+speed            = factor 1.5
+slots            = leftHand,rightHand,sheathe
+icon             = /
+... wep_003
+
+vvv wep_004
+name             = scimitar
+kind             = weapon
+durability       = 60-240
+description      = A smooth crescent of steel with leather hilt.
+buffs            = None
+debuffs          = None
+damage           = 1d6+1+str
+damageType       = S
+damageReductions = None
+coverage         = 20%
+weight           = 4 lb
+speed            = factor 3
+slots            = leftHand,rightHand,sheathe
+icon             = )
+... wep_004
+
+vvv wep_005
+name             = longsword
+kind             = weapon
+durability       = 70-320
+description      = A finely crafted steel longsword.
+buffs            = None
+debuffs          = None
+damage           = 1d8+str
+damageType       = S
+damageReductions = None
+coverage         = 30%
+weight           = 4 lb
+speed            = factor 3.5
+slots            = leftHand,rightHand,sheathe
+icon             = /
+... wep_005
+
+vvv wep_006
+name             = club
+kind             = weapon
+durability       = 20-70
+description      = A simple wooden club.
+buffs            = None
+debuffs          = None
+damage           = 1d4+1+str
+damageType       = B
+damageReductions = None
+coverage         = 10%
+weight           = 3 lb
+speed            = factor 2
+slots            = leftHand,rightHand,sheathe
+icon             = !
+... wep_006
+
+vvv wep_007
+name             = warhammer
+kind             = weapon
+durability       = 60-300
+description      = A hefty hammer meant for battle
+buffs            = None
+debuffs          = None
+damage           = 1d6+1+str
+damageType       = B
+damageReductions = None
+coverage         = 10%
+weight           = 5 lb
+speed            = factor 3
+slots            = leftHand,rightHand,sheathe
+icon             = ¶
+... wep_007
+
+vvv wep_008
+name             = quarterstaff
+kind             = weapon
+durability       = 40-260
+description      = A precisely carved staff.
+buffs            = None
+debuffs          = None
+damage           = 1d6+str
+damageType       = S
+damageReductions = None
+coverage         = 40%
+weight           = 3 lb
+speed            = factor 2
+slots            = twoHand,sheathe
+icon             = |
+... wep_008
+
+vvv wep_009
+name             = whip
+kind             = weapon
+durability       = 30-180
+description      = A tight coil of leather whip.
+buffs            = None
+debuffs          = None
+damage           = 1d4+2+str
+damageType       = P/B
+damageReductions = None
+coverage         = 5%
+weight           = 2 lb
+speed            = factor 1.5
+slots            = leftHand,rightHand,sheathe
+icon             = ~
+... wep_009
+
+vvv wep_010
+name             = battleaxe
+kind             = weapon
+durability       = 60-240
+description      = A sharp and broad hand axe.
+buffs            = None
+debuffs          = None
+damage           = 1d8+str
+damageType       = S/B
+damageReductions = None
+coverage         = 20%
+weight           = 4 lb
+speed            = factor 3
+slots            = leftHand,rightHand,sheathe
+icon             = \
+... wep_010
+
+vvv wep_011
+name             = shortbow
+kind             = weapon
+durability       = 70-320
+description      = A basic wooden short bow.
+buffs            = None
+debuffs          = None
+damage           = 1d6
+damageType       = RP
+damageReductions = None
+coverage         = 0%
+weight           = 2 lb
+speed            = factor 2
+slots            = twoHand,back
+icon             = {
+... wep_011
+
+vvv wep_012
+name             = longbow
+kind             = weapon
+durability       = 70-380
+description      = An elegant but effective longbow.
+buffs            = None
+debuffs          = None
+damage           = 1d8
+damageType       = RP
+damageReductions = None
+coverage         = 0%
+weight           = 4 lb
+speed            = factor 3
+slots            = twoHand,back
+icon             = }
+... wep_012
+
+
+
+
+

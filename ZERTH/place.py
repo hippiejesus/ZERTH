@@ -75,9 +75,11 @@ class region:
             if persons_present != {}: print('Persons: '+str(persons_present.keys()))
             if animals_present != {}: print('Animals: '+str(animals_present.keys()))
         if self.object_list != []:
-            print('Objects: ')
+            nameList = list()
+          
             for item in self.object_list:
-                print('    '+str(item.name))
+                nameList.append(item.name)
+            print('Objects: '+str(nameList))
         if self.resources != {}:
             print('Resources(and severity): '+str(self.resources))
         

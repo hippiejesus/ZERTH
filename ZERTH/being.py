@@ -7,7 +7,7 @@ needsReferences = nr = dict() #references to objects that
 default_stats_person={'Strength':10,'Agility':15,'Intellect':15,
                'Sense':12,'Wounds':10,'Vitality':10, 'Discipline':'d8',
                'Toughness':0,'AC':0,'Resistances':{'Slashing':10},
-               'Equipped':['Shirt','Pants'],'Inventory':{}} 
+               'Equipped':{},'Inventory':{}} 
                
 default_stats_plant={'Strength':1,'Agility':0,'Intellect':1,
                'Sense':5,'Wounds':2,'Vitality':2,
@@ -16,7 +16,7 @@ default_stats_plant={'Strength':1,'Agility':0,'Intellect':1,
 default_stats_animal={'Strength':10,'Agility':15,'Intellect':15,
                'Sense':12,'Wounds':10,'Vitality':10, 'Discipline':'d8',
                'Toughness':0,'AC':0,'Resistances':{'Slashing':10},
-               'Equipped':['Shirt','Pants'],'Inventory':{}} 
+               'Equipped':{},'Inventory':{}} 
                
         
 class being:
@@ -64,6 +64,7 @@ class npc(person):
         self.amI.append('npc')
         print('test npc')
         self.mood = 'Fair'
+        self.roles = []
         
 class animal(being):
     def __init__(self,name='Animal',stats=default_stats_animal):
@@ -74,6 +75,7 @@ class animal(being):
         stats = self.name
         self.name = name
         self.stats = stats
+        self.roles = []
         
         print('test beast')
         
