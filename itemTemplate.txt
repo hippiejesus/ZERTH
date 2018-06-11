@@ -1,0 +1,12 @@
+name             =
+kind             =
+durability       =
+description      =
+buffs            =
+debuffs          =
+damage           =
+damageType       =
+damageReductions =
+coverage         =
+weight           =
+speed            =

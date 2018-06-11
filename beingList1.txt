@@ -1,0 +1,33 @@
+vvv npc_001
++ person
+name             = human
+nickname         = villager
+strength         = 8
+agility          = 8
+intellect        = 5
+sense            = 5
+wounds           = 6
+vitality         = 10
+discipline       = 4
+toughness        = 1
+inventory        = None
+resources        = None
+icon             = V
+... npc_001
+
+vvv npc_002
++ person
+name             = human
+nickname         = brigand
+strength         = 16
+agility          = 12
+intellect        = 9
+sense            = 14
+wounds           = 8
+vitality         = 12
+discipline       = 6
+toughness        = 3
+inventory        = None
+resources        = None
+icon             = B
+... npc_002
