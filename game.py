@@ -1,9 +1,15 @@
 import sys
+import pprint
 
-start = ['--------',
-         '--------',
-         '--------',
-         '--------']
+pp = pprint.PrettyPrinter(indent = 3)
+
+start = ['----------------',
+         '----------------',
+         '----------------',
+         '----------------',
+         '----------------',
+         '----------------',
+         '----------------']
 
 class character:
     def __init__(self,name,identity,stats,controller):
@@ -14,6 +20,8 @@ class character:
         self.location = (0,0)
         self.sublocation = [3,3]
         self.avatar = '@'
+        self.inventory = []
+        self.equipped = {}
     def act(self,situation):
         self.brain.act(situation)
     def move_n(self):
@@ -24,6 +32,26 @@ class character:
         self.sublocation[0] -= 1
     def move_e(self):
         self.sublocation[0] += 1
+    def wait(self):
+        pass
+    def status(self):
+        global pp
+        print()
+        print(self.name + ':\n')
+        pp.pprint(self.stats)
+        print()
+    def inv(self):
+        global pp
+        print()
+        print('Inventory: \n')
+        pp.pprint(self.inventory)
+        print()
+    def equip_check(self):
+        global pp
+        print()
+        print('Equipped: \n')
+        pp.pprint(self.equipped)
+        print()
 
 class world:
     def __init__(self):
@@ -89,12 +117,13 @@ class brain:
         player_commands = {'n':self.controlled.move_n,
                            's':self.controlled.move_s,
                            'w':self.controlled.move_w,
-                           'e':self.controlled.move_e,
+                           'e':self.controlled.move_e, ',':self.controlled.wait,
+                           '?':self.controlled.status, 'i?':self.controlled.inv, 'e?':self.controlled.equip_check,
                            'quit': exit}
         if self.controller == 'player':
             cycle = True
             while cycle:
-                choice = input("-: ")
+                choice = input(self.controlled.name+"-: ")
                 if choice in player_commands.keys():
                     player_commands[choice]()
                     cycle = False
@@ -114,10 +143,19 @@ class display:
     def __init__(self,name):
         self.current_world = world()
 
-        player = character(name,None,None,brain('player'))
+        player = character(name,None,
+        {'social':{'malice':0,'charity':0,'wealth':100},
+         'action':{'physicality':10,'learnedness':10,'guile':10},
+         'wellness':{'health':10,'energy':10}},brain('player'))
         player.brain.controlled = player
 
         self.current_world.spawn(player)
+        
+        other = character('Bo',None,
+        {'social':{'malice':15,'charity':35,'wealth':60}, 'action':{'physicality':10,'learnedness':10,'guile':10}, 'wellness':{'health':10,'energy':10}},brain('ai'))
+        other.brain.controlled = other
+        other.sublocation[0] += 3
+        self.current_world.spawn(other)
 
         self.current_room = self.current_world.rooms[player.location]
 
@@ -156,13 +194,13 @@ class display:
                 if i.sublocation[0] < 0:
                     self.current_world.change_sublocation_x(i,1)
                     changes = True
-                elif i.sublocation[0] > 7:
+                elif i.sublocation[0] > len(self.current_room.map[0])-1:
                     self.current_world.change_sublocation_x(i,-1)
                     changes = True
                 elif i.sublocation[1] < 0:
                     self.current_world.change_sublocation_y(i,1)
                     changes = True
-                elif i.sublocation[1] > 3:
+                elif i.sublocation[1] > len(self.current_room.map)-1:
                     self.current_world.change_sublocation_y(i,-1)
                     changes = True
 
