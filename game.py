@@ -252,7 +252,10 @@ class brain:
                             if difference[1] < 0: self.controlled.move_n()
                             else: self.controlled.move_s()
                         else:
-                            print("ATTACKING")
+                            choices = [self.controlled.attack_n,self.controlled.attack_s,self.controlled.attack_e,self.controlled.attack_w]
+                            for i in choices:
+                                i(situation)
+                            action_to_be = "attack"
             if action_to_be == '':
                 random.choice([self.controlled.move_n,self.controlled.move_s,self.controlled.move_e,self.controlled.move_w,self.controlled.wait])()
     def examine(self,situation):
@@ -309,7 +312,7 @@ class display:
         player = character(name,{'description':"The hero of this narrative. You should probably save the world or something."},
         {'social':{'malice':0,'charity':0,'wealth':100},
          'action':{'physicality':10,'learnedness':10,'guile':10},
-         'wellness':{'health':10,'energy':10}},brain('player'))
+         'wellness':{'health':50,'energy':10}},brain('player'))
         player.brain.controlled = player
 
         self.current_world.spawn(player)
